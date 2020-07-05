@@ -25,5 +25,5 @@ class SearchList(generics.ListAPIView):
     serializer_class = BookSerializer
 
     def get_queryset(self):
-        authors_count = self.request.query_params.get('authors_count', 10)
+        authors_count = self.request.query_params.get('authors_count', 1)
         return Book.objects.annotate(num_authors=Count('author')).filter(num_authors=authors_count)
