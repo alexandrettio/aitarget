@@ -1,3 +1,6 @@
+import os
+
+from django.core.mail import send_mail
 from rest_framework import viewsets, generics
 from django.db.models import Count
 
@@ -13,6 +16,18 @@ class AuthorViewSet(viewsets.ModelViewSet):
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
+
+    def create(self, request, *args, **kwargs):
+        subscribers = Subscriber.objects.all();
+        for subscriber in subscribers:
+            send_mail(
+                f'new book available {self.request.data.get("title")}',
+                f'Book {self.request.data.get("title")}. Was writen in {self.request.data.get("publication_year")}',
+                os.getenv('EMAIL_HOST_USER'),
+                [subscriber.email],
+                fail_silently=False,
+            )
+        return super(BookViewSet, self).create(request, *args, **kwargs)
 
 
 class SubscriberViewSet(viewsets.ModelViewSet):
