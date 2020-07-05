@@ -5,7 +5,7 @@
 SECRET_KEY=x$wqu793@k6ad@-f_e7yagqsclac003k)-jaqsj64vnw7b^rwj
 EMAIL_HOST_USER=some_email@yandex.ru
 EMAIL_HOST=smtp.yandex.ru
-EMAIL_HOST_PASSWORD=some_pass@yandex.ru
+EMAIL_HOST_PASSWORD=some_pass
 EMAIL_PORT=465
 ```
 
