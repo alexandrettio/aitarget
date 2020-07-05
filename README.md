@@ -1,12 +1,12 @@
 # aitarget
 ## Подготовка к запуску
-создайте файл `web-variables.env` или проинициализируйте соответствующие переменные окружения 
+Отредактируйте файл `web-variables.env`
 ```
-SECRET_KEY= Ключ для приложения джанго
-EMAIL_HOST=smtp хост, с которого будет производиться рассылка которой будет производиться рассылка
-EMAIL_PORT=порт smtp
-EMAIL_HOST_USER=владелец почты, с которой будет производиться рассылка
-EMAIL_HOST_PASSWORD= пароль от почты владельца ящика
+SECRET_KEY=x$wqu793@k6ad@-f_e7yagqsclac003k)-jaqsj64vnw7b^rwj
+EMAIL_HOST_USER=some_email@yandex.ru
+EMAIL_HOST=smtp.yandex.ru
+EMAIL_HOST_PASSWORD=some_pass@yandex.ru
+EMAIL_PORT=465
 ```
 
 ## Запуск проекта
